@@ -5,6 +5,7 @@ services:
     plan: free
     buildCommand: >
       pip install -r requirements.txt
+      jotquote
       && sed -i 's/^web_ip *= *.*/web_ip = 0.0.0.0/' ~/.jotquote/settings.conf
       && sed -i "s/^web_port *= *.*/web_port = ${PORT}/" ~/.jotquote/settings.conf
     startCommand: "jotquote webserver"
